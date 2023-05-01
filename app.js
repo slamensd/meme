@@ -57,3 +57,23 @@ postOnTwitterBtn.addEventListener('click', function() {
   const twitterUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=Check%20out%20my%20meme!&hashtags=meme&via=meetnippy`;
   window.open(twitterUrl, '_blank');
 });
+
+// Add a click event listener to the canvas to save the image when clicked
+canvas.addEventListener('click', function() {
+    saveMeme();
+  });
+  
+  // Add a touchstart event listener to the canvas to save the image on mobile devices
+  canvas.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    saveMeme();
+  });
+  
+  // Function to save the meme
+  function saveMeme() {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/jpeg');
+    link.download = 'meme.jpg';
+    link.click();
+  }
+  
