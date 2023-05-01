@@ -62,7 +62,7 @@ postOnTwitterBtn.addEventListener('click', async function() {
   const blob = await response.blob();
 
   // Create an instance of the IPFS HTTP client
-  const ipfs = window.IpfsHttpClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
+  const ipfs = window.Ipfs.HttpClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
 
   // Add the image to IPFS
   const { path } = await ipfs.add(blob);
