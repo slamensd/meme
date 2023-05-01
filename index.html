@@ -6,10 +6,13 @@
     <title>Meme Generator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+  
+<script src="https://cdn.jsdelivr.net/npm/ipfs-http-client@52.0.2/dist/index.min.js"></script>
+
 </head>
 <body>
-    <h1 class="text-center">Nippy Meme Generator</h1>
-    <p><center>Choose a thumbnail, add your message, and generate your meme</center></p>
+    <h1 class="text-center">Nippy Meme Maker</h1>
+    <p><center>Just a fun little meme maker. Choose a thumbnail, add your top & bottom message, and generate your meme!</center></p>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -91,12 +94,17 @@
                         </div>
                       </div>
                       
-                    <button id="generateMeme" class="btn btn-primary">Generate Meme</button>
+                      <div class="button-container">
+                        <button id="generateMemeBtn" class="btn btn-primary">Generate Meme</button>
+                        <button id="postOnTwitterBtn" class="btn btn-primary">Post on Twitter</button>
+                      </div>
+                      
                 </div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script src="app.js"></script>
 </body>
 </html>
