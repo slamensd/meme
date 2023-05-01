@@ -8,27 +8,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header style="background-color: #0da6ba; height: 80px; display: flex; justify-content: center; align-items: center;">
-    <img src="https://cdn.shopify.com/s/files/1/0673/5813/0452/files/NfrensLogo_b785e6d8-1a35-476b-b15e-36182db28804.png" alt="Nfrens Logo" style="height: 60px;">
+  <header style="background-color: #0da6ba; height: 80px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+    <img src="https://cdn.shopify.com/s/files/1/0673/5813/0452/files/NfrensLogo_b785e6d8-1a35-476b-b15e-36182db28804.png" alt="Nfrens Logo" style="height: 30px;">
   </header>
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <canvas id="memeCanvas" width="500" height="500"></canvas>
         <div class="text-inputs">
-          <div>
-            <label for="topText">Top Text</label>
-            <input type="text" id="topText" placeholder="Top Text">
-          </div>
-          <div>
-            <label for="bottomText">Bottom Text</label>
-            <input type="text" id="bottomText" placeholder="Bottom Text">
-          </div>
+          <label for="topText">Top Text</label>
+          <input type="text" id="topText" placeholder="Top Text">
+          <label for="bottomText">Bottom Text</label>
+          <input type="text" id="bottomText" placeholder="Bottom Text">
         </div>
         <div class="button-container">
           <button id="generateMemeBtn" class="btn btn-primary">Save Meme</button>
         </div>
       </div>
+  
       <div class="col-md-4">
         <div class="thumbnail-container">
             <img src="/images/NFRENS_ArtworkSocial-01.jpg" data-src="/images/NFRENS_ArtworkSocial-01.jpg" alt="Image 1" class="img-thumbnail">
