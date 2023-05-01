@@ -6,7 +6,7 @@ const generateMemeBtn = document.getElementById('generateMemeBtn');
 const postOnTwitterBtn = document.getElementById('postOnTwitterBtn');
 
 const currentImage = new Image();
-currentImage.src = ''; // Set the default image source if needed
+currentImage.src = '/images/NFRENS_ArtworkSocial-37.jpg'; // Set the default image source if needed
 
 function drawText() {
   const topText = topTextInput.value;
