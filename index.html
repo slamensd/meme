@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Meme Generator</h1>
+    <div class="meme-generator">
+        <div class="image-selector">
+            <select id="imageSelect">
+                <!-- Add your 50 image options here -->
+                <option value="/images/NFRENS_ArtworkSocial-01.jpg">Image 1</option>
+                <option value="/images/NFRENS_ArtworkSocial-02.jpg">Image 2</option>
+                <!-- ... -->
+            </select>
+        </div>
+        <div class="meme-canvas">
+            <canvas id="memeCanvas" width="500" height="500"></canvas>
+        </div>
+        <div class="text-inputs">
+            <input type="text" id="topText" placeholder="Top text">
+            <input type="text" id="bottomText" placeholder="Bottom text">
+        </div>
+        <button id="generateMeme">Generate Meme</button>
+        <button id="postToTwitter">Post to Twitter</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
