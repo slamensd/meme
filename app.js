@@ -51,12 +51,6 @@ generateMemeBtn.addEventListener('click', function() {
   link.click();
 });
 
-postOnTwitterBtn.addEventListener('click', function() {
-  const url = canvas.toDataURL('image/png');
-  const encodedUrl = encodeURIComponent(url);
-  const twitterUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=Check%20out%20my%20meme!&hashtags=meme&via=meetnippy`;
-  window.open(twitterUrl, '_blank');
-});
 
 // Add a click event listener to the canvas to save the image when clicked
 canvas.addEventListener('click', function() {
