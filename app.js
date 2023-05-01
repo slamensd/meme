@@ -40,14 +40,27 @@ $(document).ready(function() {
         });
     });
 
-    topTextInput.addEventListener('input', drawText);
-    bottomTextInput.addEventListener('input', drawText);
+    topTextInput.addEventListener('focus', function() {
+        this.value = '';
+      });
+      
+      bottomTextInput.addEventListener('focus', function() {
+        this.value = '';
+      });
+      
 
-    generateMemeBtn.addEventListener('click', function() {
+      generateMemeBtn.addEventListener('click', function() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(currentImage, 0, 0, canvas.width, canvas.height);
         drawText();
-    });
+      
+        // Save the image
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/jpeg');
+        link.download = 'meme.jpg';
+        link.click();
+      });
+      
     
 
     loadImage(imageThumbnails[0].dataset.src);
