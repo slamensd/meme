@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nippy Meme Maker</title>
+    <title>Meme Generator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client@52.0.2/dist/index.min.js"></script>
     <link rel="stylesheet" href="styles.css">
+  
+<script src="https://cdn.jsdelivr.net/npm/ipfs-http-client@52.0.2/dist/index.min.js"></script>
+
 </head>
 <body>
+    <h1 class="text-center">Nippy Meme Maker</h1>
+    <p><center>Just a fun little meme maker. Choose a thumbnail, add your top & bottom message, and generate your meme!</center></p>
     <div class="container">
-        <h1 class="text-center">Nippy Meme Maker</h1>
-        <p class="text-center">Just a fun little meme maker. Choose a thumbnail, add your top & bottom message, and generate your meme!</p>
         <div class="row">
-            <div class="col-md-4">
-                <div class="thumbnail-container">
-                    <img src="/images/NFRENS_ArtworkSocial-01.jpg" data-src="/images/NFRENS_ArtworkSocial-01.jpg" alt="Image 1" class="img-thumbnail">
+            <div class="col-md-6">
+                <div class="image-thumbnails">
+                    <!-- Add your 50 image thumbnails here -->
+<!-- Repeated pattern from 1 to 50 -->
+<img src="/images/NFRENS_ArtworkSocial-01.jpg" data-src="/images/NFRENS_ArtworkSocial-01.jpg" alt="Image 1" class="img-thumbnail">
 <img src="/images/NFRENS_ArtworkSocial-02.jpg" data-src="/images/NFRENS_ArtworkSocial-02.jpg" alt="Image 2" class="img-thumbnail">
 <img src="/images/NFRENS_ArtworkSocial-03.jpg" data-src="/images/NFRENS_ArtworkSocial-03.jpg" alt="Image 3" class="img-thumbnail">
 <img src="/images/NFRENS_ArtworkSocial-04.jpg" data-src="/images/NFRENS_ArtworkSocial-04.jpg" alt="Image 4" class="img-thumbnail">
@@ -68,27 +71,40 @@
 <img src="/images/NFRENS_ArtworkSocial-48.jpg" data-src="/images/NFRENS_ArtworkSocial-48.jpg" alt="Image 48" class="img-thumbnail">
 <img src="/images/NFRENS_ArtworkSocial-49.jpg" data-src="/images/NFRENS_ArtworkSocial-49.jpg" alt="Image 49" class="img-thumbnail">
 <img src="/images/NFRENS_ArtworkSocial-50.jpg" data-src="/images/NFRENS_ArtworkSocial-50.jpg" alt="Image 50" class="img-thumbnail">
+
+
+
+
+                    <!-- ... -->
                 </div>
             </div>
-            <div class="col-md-8">
-                <canvas id="memeCanvas" width="500" height="500"></canvas>
-                <div class="text-inputs">
-                    <div>
-                        <label for="topText">Top Text</label>
-                        <input type="text" id="topText" placeholder="Top Text">
+            <div class="col-md-6">
+                <div class="meme-generator">
+                    <div class="meme-canvas">
+                        <canvas id="memeCanvas" width="500" height="500"></canvas>
                     </div>
-                    <div>
-                        <label for="bottomText">Bottom Text</label>
-                        <input type="text" id="bottomText" placeholder="Bottom Text">
-                    </div>
-                </div>
-                <div class="button-container">
-                    <button id="generateMemeBtn" class="btn btn-primary">Generate Meme</button>
-                    <button id="postOnTwitterBtn" class="btn btn-primary">Post on Twitter</button>
+                    <div class="text-inputs">
+                        <div>
+                          <label for="topText">Top Text</label>
+                          <input type="text" id="topText" placeholder="Top Text">
+                        </div>
+                        <div>
+                          <label for="bottomText">Bottom Text</label>
+                          <input type="text" id="bottomText" placeholder="Bottom Text">
+                        </div>
+                      </div>
+                      
+                      <div class="button-container">
+                        <button id="generateMemeBtn" class="btn btn-primary">Generate Meme</button>
+                        <button id="postOnTwitterBtn" class="btn btn-primary">Post on Twitter</button>
+                      </div>
+                      
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script src="app.js"></script>
 </body>
 </html>
