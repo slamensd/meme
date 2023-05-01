@@ -44,8 +44,11 @@ $(document).ready(function() {
     bottomTextInput.addEventListener('input', drawText);
 
     generateMemeBtn.addEventListener('click', function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(currentImage, 0, 0, canvas.width, canvas.height);
         drawText();
     });
+    
 
     loadImage(imageThumbnails[0].dataset.src);
 });
