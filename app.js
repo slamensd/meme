@@ -57,11 +57,7 @@ canvas.addEventListener('click', function() {
     saveMeme();
   });
   
-  // Add a touchstart event listener to the canvas to save the image on mobile devices
-  canvas.addEventListener('touchstart', function(event) {
-    event.preventDefault();
-    saveMeme();
-  });
+  
   
   // Function to save the meme
   function saveMeme() {
