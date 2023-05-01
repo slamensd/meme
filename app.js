@@ -9,15 +9,20 @@ const currentImage = new Image();
 currentImage.src = ''; // Set the default image source if needed
 
 function drawText() {
-  const topText = topTextInput.value;
-  const bottomText = bottomTextInput.value;
-
-  ctx.font = '48px Impact';
-  ctx.fillStyle = 'white';
-  ctx.textAlign = 'center';
-  ctx.fillText(topText, canvas.width / 2, 50);
-  ctx.fillText(bottomText, canvas.width / 2, canvas.height - 20);
-}
+    const topText = topTextInput.value;
+    const bottomText = bottomTextInput.value;
+  
+    ctx.font = '48px Impact';
+    ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.textAlign = 'center';
+    ctx.fillText(topText, canvas.width / 2, 50);
+    ctx.strokeText(topText, canvas.width / 2, 50);
+    ctx.fillText(bottomText, canvas.width / 2, canvas.height - 20);
+    ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 20);
+  }
+  
 
 function loadImage(src) {
   currentImage.src = src;
@@ -62,7 +67,8 @@ postOnTwitterBtn.addEventListener('click', async function() {
   const blob = await response.blob();
 
   // Create an instance of the IPFS HTTP client
-  const ipfs = window.Ipfs.HttpClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
+  const ipfs = window.ipfsHttpClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
+
 
   // Add the image to IPFS
   const { path } = await ipfs.add(blob);
