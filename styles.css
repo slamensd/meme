@@ -1,19 +1,27 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
 }
 
-.meme-generator {
-    max-width: 500px;
-    margin: 0 auto;
+h1 {
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-.image-selector {
+.image-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
     margin-bottom: 20px;
+}
+
+.img-thumbnail {
+    cursor: pointer;
+    width: 100%;
 }
 
 .meme-canvas {
     position: relative;
+    margin-bottom: 20px;
 }
 
 canvas {
@@ -21,7 +29,10 @@ canvas {
 }
 
 .text-inputs {
-    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-bottom: 20px;
 }
 
 button {

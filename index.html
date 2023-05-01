@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Meme Generator</h1>
-    <div class="meme-generator">
-        <div class="image-selector">
-            <select id="imageSelect">
-                <!-- Add your 50 image options here -->
-                <option value="/images/NFRENS_ArtworkSocial-01.jpg">Image 1</option>
-                <option value="/images/NFRENS_ArtworkSocial-02.jpg">Image 2</option>
-                <!-- ... -->
-            </select>
+    <h1 class="text-center">Meme Generator</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="image-thumbnails">
+                    <!-- Add your 50 image thumbnails here -->
+                    <img src="/images/NFRENS_ArtworkSocial-01.jpg" data-src="img1.jpg" alt="Image 1" class="img-thumbnail">
+                    <img src="/images/NFRENS_ArtworkSocial-02.jpg" data-src="img2.jpg" alt="Image 2" class="img-thumbnail">
+                    <!-- ... -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="meme-generator">
+                    <div class="meme-canvas">
+                        <canvas id="memeCanvas" width="500" height="500"></canvas>
+                    </div>
+                    <div class="text-inputs">
+                        <input type="text" id="topText" placeholder="Top text" class="form-control">
+                        <input type="text" id="bottomText" placeholder="Bottom text" class="form-control">
+                    </div>
+                    <button id="generateMeme" class="btn btn-primary">Generate Meme</button>
+                </div>
+            </div>
         </div>
-        <div class="meme-canvas">
-            <canvas id="memeCanvas" width="500" height="500"></canvas>
-        </div>
-        <div class="text-inputs">
-            <input type="text" id="topText" placeholder="Top text">
-            <input type="text" id="bottomText" placeholder="Bottom text">
-        </div>
-        <button id="generateMeme">Generate Meme</button>
-        <button id="postToTwitter">Post to Twitter</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>

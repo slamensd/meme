@@ -2,19 +2,19 @@ $(document).ready(function() {
     const canvas = document.getElementById('memeCanvas');
     const ctx = canvas.getContext('2d');
     
-    const imageSelect = document.getElementById('imageSelect');
+    const imageThumbnails = document.querySelectorAll('.img-thumbnail');
     const topTextInput = document.getElementById('topText');
     const bottomTextInput = document.getElementById('bottomText');
     const generateMemeBtn = document.getElementById('generateMeme');
-    const postToTwitterBtn = document.getElementById('postToTwitter');
     
     let currentImage = new Image();
     
-    function loadImage() {
-        currentImage.src = imageSelect.value;
+    function loadImage(src) {
+        currentImage.src = src;
         currentImage.onload = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(currentImage, 0, 0, canvas.width, canvas.height);
+            drawText();
         };
     }
     
@@ -34,21 +34,18 @@ $(document).ready(function() {
         ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 20);
     }
 
-    imageSelect.addEventListener('change', loadImage);
+    imageThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            loadImage(thumbnail.dataset.src);
+        });
+    });
+
     topTextInput.addEventListener('input', drawText);
     bottomTextInput.addEventListener('input', drawText);
 
     generateMemeBtn.addEventListener('click', function() {
-        loadImage();
-        setTimeout(() => {
-            drawText();
-        }, 100);
+        drawText();
     });
 
-    postToTwitterBtn.addEventListener('click', function() {
-        // Add Twitter API integration here
-    });
-
-    loadImage();
+    loadImage(imageThumbnails[0].dataset.src);
 });
-
